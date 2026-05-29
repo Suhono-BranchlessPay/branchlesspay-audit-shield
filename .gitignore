@@ -1,0 +1,8 @@
+*.pyc
+__pycache__/
+*.zip
+test_m2_output.log
+TESTING.local.md
+query
+*.bat
+odoo.conf.fixed

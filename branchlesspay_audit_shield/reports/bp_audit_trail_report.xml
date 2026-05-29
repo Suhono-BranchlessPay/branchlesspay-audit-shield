@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="action_bp_audit_trail_report" model="ir.actions.report">
+        <field name="name">BranchlessPay Audit Trail</field>
+        <field name="model">account.move</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">branchlesspay_audit_shield.bp_audit_trail_document</field>
+        <field name="report_file">branchlesspay_audit_shield.bp_audit_trail_document</field>
+        <field name="print_report_name">'BP-Audit-%s' % (object.name or object.id)</field>
+        <field name="binding_model_id" ref="account.model_account_move"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <record id="action_bp_audit_trail_report_payment" model="ir.actions.report">
+        <field name="name">BranchlessPay Audit Trail</field>
+        <field name="model">account.payment</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">branchlesspay_audit_shield.bp_audit_trail_document</field>
+        <field name="report_file">branchlesspay_audit_shield.bp_audit_trail_document</field>
+        <field name="binding_model_id" ref="account.model_account_payment"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <record id="action_bp_audit_trail_report_po" model="ir.actions.report">
+        <field name="name">BranchlessPay Audit Trail</field>
+        <field name="model">purchase.order</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">branchlesspay_audit_shield.bp_audit_trail_document</field>
+        <field name="report_file">branchlesspay_audit_shield.bp_audit_trail_document</field>
+        <field name="binding_model_id" ref="purchase.model_purchase_order"/>
+        <field name="binding_type">report</field>
+    </record>
+</odoo>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="bp_audit_trail_document">
+        <t t-call="web.html_container">
+            <t t-foreach="records" t-as="rec">
+                <div class="page">
+                    <h2>BranchlessPay Audit Shield</h2>
+                    <p>Immutable audit trail — forensic evidence report</p>
+                    <hr/>
+                    <h3>Document</h3>
+                    <table class="table table-sm">
+                        <tr>
+                            <td><strong>Reference</strong></td>
+                            <td><span t-esc="rec['doc'].display_name"/></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Model</strong></td>
+                            <td><span t-esc="rec['doc']._name"/></td>
+                        </tr>
+                        <tr t-if="'amount_total' in rec['doc']._fields">
+                            <td><strong>Amount</strong></td>
+                            <td><span t-esc="rec['doc'].amount_total"/></td>
+                        </tr>
+                    </table>
+                    <h3>Anchor Summary</h3>
+                    <table class="table table-bordered table-sm">
+                        <tr>
+                            <td>Content Hash (SHA-256)</td>
+                            <td><span t-esc="rec['doc'].bp_content_hash or 'N/A'"/></td>
+                        </tr>
+                        <tr>
+                            <td>Anchor ID</td>
+                            <td><span t-esc="rec['doc'].bp_anchor_id or 'N/A'"/></td>
+                        </tr>
+                        <tr>
+                            <td>TX Hash (Monad)</td>
+                            <td><span t-esc="rec['doc'].bp_tx_hash or 'Pending'"/></td>
+                        </tr>
+                        <tr>
+                            <td>Status</td>
+                            <td><span t-esc="rec['doc'].bp_anchor_status"/></td>
+                        </tr>
+                        <tr>
+                            <td>Anchored At</td>
+                            <td><span t-esc="rec['doc'].bp_anchored_at"/></td>
+                        </tr>
+                        <tr t-if="rec.get('explorer_url')">
+                            <td>Verification URL</td>
+                            <td><span t-esc="rec['explorer_url']"/></td>
+                        </tr>
+                    </table>
+                    <h3>Anchor Log History</h3>
+                    <table class="table table-bordered table-sm">
+                        <thead>
+                            <tr>
+                                <th>Time</th>
+                                <th>Event</th>
+                                <th>Hash</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr t-foreach="rec['entries']" t-as="entry">
+                                <td><span t-esc="entry.create_date"/></td>
+                                <td><span t-esc="entry.event_type"/></td>
+                                <td><span t-esc="entry.content_hash"/></td>
+                                <td><span t-esc="entry.anchor_status"/></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p class="text-muted">
+                        Generated <span t-esc="context_timestamp"/> —
+                        <span t-esc="company.name"/>.
+                        Designed to support forensic audit and evidentiary workflows.
+                    </p>
+                </div>
+            </t>
+        </t>
+    </template>
+</odoo>

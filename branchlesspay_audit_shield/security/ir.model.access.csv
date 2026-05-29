@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_bp_anchor_log_user,bp.anchor.log.user,model_bp_anchor_log,account.group_account_user,1,0,0,0
+access_bp_anchor_log_manager,bp.anchor.log.manager,model_bp_anchor_log,account.group_account_manager,1,1,1,0
+access_bp_audit_export_wizard_user,bp.audit.export.wizard.user,model_bp_audit_export_wizard,account.group_account_user,1,1,1,1

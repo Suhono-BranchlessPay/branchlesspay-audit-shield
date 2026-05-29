@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_bp_audit_export_wizard_form" model="ir.ui.view">
+        <field name="name">bp.audit.export.wizard.form</field>
+        <field name="model">bp.audit.export.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Export Audit Trail">
+                <group>
+                    <field name="move_id"/>
+                    <field name="payment_id"/>
+                    <field name="purchase_id"/>
+                </group>
+                <footer>
+                    <button name="action_export_pdf" type="object"
+                            string="Export PDF" class="btn-primary"/>
+                    <button string="Cancel" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>

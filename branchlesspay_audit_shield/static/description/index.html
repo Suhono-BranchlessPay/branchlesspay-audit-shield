@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>BP Audit Shield</title>
+</head>
+<body>
+
+    <section class="oe_container">
+        <div class="oe_row oe_spaced">
+            <h2 class="oe_slogan">BP Audit Shield</h2>
+            <h3 class="oe_slogan">Immutable audit trail for Odoo — by BranchlessPay</h3>
+        </div>
+    </section>
+
+    <section class="oe_container oe_dark">
+        <div class="oe_row oe_spaced">
+            <div class="oe_span12">
+                <p class="alert alert-warning" style="padding:12px;border-radius:4px;">
+                    <strong>External service required.</strong>
+                    This module requires external BranchlessPay API service.
+                    See <a href="https://branchlesspay.com">branchlesspay.com</a> for details.
+                    A valid license key is required for anchoring.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="oe_container">
+        <div class="oe_row oe_spaced">
+            <h3>Overview</h3>
+            <p>
+                BP Audit Shield adds a tamper-evident audit layer on top of your existing
+                Odoo workflows. Every invoice, payment, purchase order, and approval request
+                can be hashed (SHA-256) and anchored to the BranchlessPay network
+                (Monad blockchain) without changing how Odoo works.
+            </p>
+            <ul>
+                <li>Automatic anchoring on create and financial field updates</li>
+                <li>BranchlessPay API: <code>POST /api/v1/anchor</code> and status polling</li>
+                <li>Verification panel: Queued / Anchored / Failed</li>
+                <li>Full anchor log per company</li>
+                <li>PDF audit trail export with Monad explorer link</li>
+                <li>Compatible with Odoo 17 and 18</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="oe_container oe_dark">
+        <div class="oe_row oe_spaced">
+            <h3>Configuration</h3>
+            <p>
+                Go to <strong>Accounting → Configuration → Settings → BranchlessPay Audit Shield</strong>.
+                Enable the module, enter your license key from
+                <a href="https://branchlesspay.com">branchlesspay.com</a>, and click
+                <strong>Test Connection</strong>.
+            </p>
+        </div>
+    </section>
+
+    <section class="oe_container">
+        <div class="oe_row oe_spaced">
+            <div class="oe_span12">
+                <img src="screenshot_settings.png" alt="Settings" class="oe_picture oe_screenshot"/>
+            </div>
+        </div>
+    </section>
+
+    <section class="oe_container oe_dark">
+        <div class="oe_row oe_spaced">
+            <div class="oe_span12">
+                <img src="screenshot_invoice.png" alt="Invoice audit panel" class="oe_picture oe_screenshot"/>
+            </div>
+        </div>
+    </section>
+
+    <section class="oe_container">
+        <div class="oe_row oe_spaced">
+            <div class="oe_span12">
+                <img src="screenshot_anchor_log.png" alt="Anchor log" class="oe_picture oe_screenshot"/>
+            </div>
+        </div>
+    </section>
+
+    <section class="oe_container oe_dark">
+        <div class="oe_row oe_spaced">
+            <h3>Pricing &amp; licensing</h3>
+            <p>
+                Listed on the Odoo App Store at <strong>$29 USD</strong> (paid module).
+                Free trial tiers may be available directly from BranchlessPay.
+                License keys are issued per tenant at
+                <a href="https://branchlesspay.com">branchlesspay.com</a>.
+            </p>
+            <p>
+                <strong>Publisher revenue (Odoo App Store):</strong>
+                BranchlessPay receives 70% of net App Store revenue;
+                Odoo S.A. retains 30%. Minimum publisher payout threshold: €400.
+            </p>
+        </div>
+    </section>
+
+    <section class="oe_container">
+        <div class="oe_row oe_spaced">
+            <h3>Privacy &amp; compliance</h3>
+            <p>
+                Data processed for anchoring is sent to BranchlessPay API endpoints only
+                when a valid license key is configured. No credentials are stored in source code.
+            </p>
+            <p>
+                Privacy Policy:
+                <a href="https://branchlesspay.com/compliance">branchlesspay.com/compliance</a>
+            </p>
+            <p>
+                Technology documentation:
+                <a href="https://branchlesspay.com/technology">branchlesspay.com/technology</a>
+            </p>
+            <p>
+                Support:
+                <a href="mailto:suhono@branchlesspay.com">suhono@branchlesspay.com</a>
+            </p>
+        </div>
+    </section>
+
+</body>
+</html>

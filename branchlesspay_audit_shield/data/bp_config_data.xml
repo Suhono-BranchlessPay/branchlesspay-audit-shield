@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <record id="bp_config_api_url" model="ir.config_parameter">
+        <field name="key">bp_audit.api_url</field>
+        <field name="value">https://branchlesspay.com/api/v1/anchor</field>
+    </record>
+    <record id="bp_config_explorer_url" model="ir.config_parameter">
+        <field name="key">bp_audit.explorer_url</field>
+        <field name="value">https://testnet.monadexplorer.com/tx/</field>
+    </record>
+    <record id="bp_config_enabled" model="ir.config_parameter">
+        <field name="key">bp_audit.enabled</field>
+        <field name="value">True</field>
+    </record>
+</odoo>

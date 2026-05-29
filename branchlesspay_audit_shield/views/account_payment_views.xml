@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_account_payment_form_bp" model="ir.ui.view">
+        <field name="name">account.payment.form.bp.inherit</field>
+        <field name="model">account.payment</field>
+        <field name="inherit_id" ref="account.view_account_payment_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet" position="inside">
+                <group string="BranchlessPay Audit" name="bp_audit">
+                    <field name="bp_anchor_status" widget="statusbar"
+                           statusbar_visible="queued,anchored,failed"/>
+                    <field name="bp_content_hash" readonly="1"/>
+                    <field name="bp_tx_hash" readonly="1"/>
+                    <field name="bp_anchor_id" readonly="1"/>
+                    <field name="bp_anchored_at" readonly="1"/>
+                    <field name="bp_explorer_url" widget="url"/>
+                    <button string="Export Audit Trail PDF"
+                            type="object"
+                            name="action_bp_export_audit"
+                            class="btn-secondary"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>

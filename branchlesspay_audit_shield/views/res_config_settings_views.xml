@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_config_settings_view_form_bp" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.bp</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="account.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//app[@name='account']" position="after">
+                <app string="BranchlessPay Audit Shield" name="branchlesspay_audit_shield">
+                    <block title="API Configuration" id="bp_audit_api_block">
+                        <setting string="Enable Audit Shield" id="bp_setting_enabled">
+                            <field name="bp_enabled"/>
+                        </setting>
+                        <setting string="License Key" id="bp_setting_license"
+                                 help="Register at branchlesspay.com to obtain your license key.">
+                            <field name="bp_license_key" password="True"
+                                   placeholder="bp_test_xxxxxxxx"/>
+                        </setting>
+                        <setting string="API URL" id="bp_setting_api_url"
+                                 help="Must end with /api/v1/anchor">
+                            <field name="bp_api_url" class="w-100"
+                                   placeholder="https://branchlesspay.com/api/v1/anchor"/>
+                        </setting>
+                        <setting string="Monad Explorer URL" id="bp_setting_explorer"
+                                 help="Base URL for blockchain verification links.">
+                            <field name="bp_explorer_url" class="w-100"
+                                   placeholder="https://testnet.monadexplorer.com/tx/"/>
+                        </setting>
+                    </block>
+                    <block title="Connection Test" id="bp_audit_test_block">
+                        <div class="row mt16">
+                            <div class="col-12">
+                                <button name="action_test_bp_connection"
+                                        type="object"
+                                        string="Test Connection"
+                                        class="btn-primary"
+                                        icon="fa-plug"/>
+                                <span class="text-muted ms-3">
+                                    Click Save first, then Test Connection.
+                                </span>
+                            </div>
+                        </div>
+                    </block>
+                </app>
+            </xpath>
+        </field>
+    </record>
+</odoo>

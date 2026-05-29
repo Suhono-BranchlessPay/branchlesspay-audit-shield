@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_bp_anchor_log_tree" model="ir.ui.view">
+        <field name="name">bp.anchor.log.tree</field>
+        <field name="model">bp.anchor.log</field>
+        <field name="arch" type="xml">
+            <tree create="false" edit="false" delete="false">
+                <field name="create_date"/>
+                <field name="res_model"/>
+                <field name="res_id"/>
+                <field name="event_type"/>
+                <field name="reference_id"/>
+                <field name="content_hash"/>
+                <field name="anchor_status"/>
+                <field name="tx_hash"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_bp_anchor_log_form" model="ir.ui.view">
+        <field name="name">bp.anchor.log.form</field>
+        <field name="model">bp.anchor.log</field>
+        <field name="arch" type="xml">
+            <form create="false" edit="false" delete="false">
+                <sheet>
+                    <group>
+                        <field name="company_id"/>
+                        <field name="res_model"/>
+                        <field name="res_id"/>
+                        <field name="event_type"/>
+                        <field name="reference_id"/>
+                        <field name="anchor_status"/>
+                    </group>
+                    <group string="Hashes">
+                        <field name="content_hash"/>
+                        <field name="anchor_id"/>
+                        <field name="tx_hash"/>
+                    </group>
+                    <field name="error_message"/>
+                    <field name="payload_snapshot"/>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_bp_anchor_log" model="ir.actions.act_window">
+        <field name="name">BranchlessPay Anchor Log</field>
+        <field name="res_model">bp.anchor.log</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_bp_anchor_log"
+              name="Anchor Log"
+              parent="account.menu_finance"
+              action="action_bp_anchor_log"
+              sequence="99"/>
+</odoo>
