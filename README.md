@@ -9,11 +9,14 @@ Official Odoo App Store module by **BranchlessPay, Inc.** — Phase 1 MVP.
 | Support | suhono@branchlesspay.com |
 | Privacy | https://branchlesspay.com/compliance |
 
-## Module location
+## Module location (Odoo Apps repository layout)
+
+Each addon must live in its own folder at the **root of this repository** (required for `apps.odoo.com` SCAN):
 
 ```
-Audit Shield/
-└── branchlesspay_audit_shield/    ← install this addon in Odoo
+branchlesspay-audit-shield/          ← repo root (branch 17.0)
+├── branchlesspay_audit_shield/      ← core addon (install in Odoo)
+└── branchlesspay_audit_shield_approvals/   ← optional Enterprise approvals bridge
 ```
 
 > The previous prototype folder `audit_shield/` has been superseded. Use **`branchlesspay_audit_shield`** only.
